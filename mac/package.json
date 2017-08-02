@@ -1,8 +1,9 @@
 {
   "name": "@veonim/neovim",
-  "version": "0.0.2-mac",
+  "version": "0.0.3-mac",
   "description": "neovim binary for veonim",
   "main": "launcher.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/veonim/neovim.git"
