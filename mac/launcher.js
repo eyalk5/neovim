@@ -1,3 +1,3 @@
 'use strict'
 const { spawn } = require('child_process')
-module.exports = (args, opts) => spawn('bin/nvim', args, opts)
+exports.default = (args, opts) => spawn('bin/nvim', args, opts)
