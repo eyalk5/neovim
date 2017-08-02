@@ -1,18 +1,12 @@
 {
   "name": "@veonim/neovim",
-  "version": "0.0.1-mac",
+  "version": "0.0.2-mac",
   "description": "neovim binary for veonim",
   "main": "launcher.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/veonim/neovim.git"
   },
-  "keywords": [
-    "veonim"
-  ],
   "author": "veonim",
   "license": "ISC",
   "bugs": {
