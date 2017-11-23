@@ -11,6 +11,10 @@
   "bugs": {
     "url": "https://github.com/veonim/neovim/issues"
   },
+  "files": [
+    "package.json",
+    "README.md"
+  ],
   "homepage": "https://github.com/veonim/neovim#readme",
   "optionalDependencies": {
     "@veonim/neovim": "^0.0.5-win",
