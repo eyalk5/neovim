@@ -8,4 +8,4 @@ const platforms = new Map([
 
 const suffix = platforms.get(process.platform)
 if (!suffix) throw new Error(`Unsupported platform ${process.platform}`)
-exports.default = require('@veonim/neovim-${suffix}').default
+exports.default = require(`@veonim/neovim-${suffix}`).default
