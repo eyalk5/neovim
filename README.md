@@ -25,6 +25,10 @@ In this way, I accomplish the following goals:
 
 If you have a better idea complain loudly.
 
+## development
+
+in development it would be a good idea to install `@veonim/neovim-dev`. this will use the `optionalDependencies` feature of npm to bring in a platform specific binary package. this should only be used for current platform development
+
 ## upgrade process
 
 make changes
