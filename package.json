@@ -17,8 +17,8 @@
   ],
   "homepage": "https://github.com/veonim/neovim#readme",
   "optionalDependencies": {
-    "@veonim/neovim": "^0.0.5-win",
-    "@veonim/neovim": "^0.0.5-mac",
-    "@veonim/neovim": "^0.0.5-linux"
+    "@veonim/neovim": "^0.0.6-win",
+    "@veonim/neovim": "^0.0.6-mac",
+    "@veonim/neovim": "^0.0.6-linux"
   }
 }
