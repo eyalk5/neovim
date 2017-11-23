@@ -1,6 +1,8 @@
 {
-  "name": "@veonim/neovim-dev",
-  "version": "0.0.8",
+  "name": "@veonim/neovim",
+  "version": "0.0.9",
+  "main": "main.js",
+  "types": "index.d.ts",
   "description": "neovim binary for veonim",
   "repository": {
     "type": "git",
@@ -13,7 +15,8 @@
   },
   "files": [
     "package.json",
-    "README.md"
+    "main.js",
+    "index.d.ts"
   ],
   "homepage": "https://github.com/veonim/neovim#readme",
   "optionalDependencies": {
