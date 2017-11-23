@@ -1,6 +1,6 @@
 {
   "name": "@veonim/neovim-dev",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "neovim binary for veonim",
   "repository": {
     "type": "git",
@@ -17,8 +17,8 @@
   ],
   "homepage": "https://github.com/veonim/neovim#readme",
   "optionalDependencies": {
-    "@veonim/neovim": "^0.0.6-win",
-    "@veonim/neovim": "^0.0.6-mac",
-    "@veonim/neovim": "^0.0.6-linux"
+    "@veonim/neovim-win": "^0.0.1",
+    "@veonim/neovim-mac": "^0.0.1",
+    "@veonim/neovim-linux": "^0.0.1"
   }
 }

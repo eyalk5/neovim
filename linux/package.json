@@ -1,6 +1,6 @@
 {
-  "name": "@veonim/neovim",
-  "version": "0.0.6-linux",
+  "name": "@veonim/neovim-linux",
+  "version": "0.0.1",
   "description": "neovim binary for veonim",
   "main": "launcher.js",
   "types": "index.d.ts",
