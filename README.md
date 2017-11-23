@@ -25,4 +25,9 @@ In this way, I accomplish the following goals:
 
 If you have a better idea complain loudly.
 
+## upgrade process
 
+make changes
+bump version in mac + linux + win `package.json`
+`npm publish` main `package.json` (if modified)
+`npm publish` each os package

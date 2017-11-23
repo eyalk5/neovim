@@ -1,9 +1,7 @@
 {
-  "name": "@veonim/neovim",
-  "version": "0.0.6-win",
+  "name": "@veonim/neovim-dev",
+  "version": "0.0.6",
   "description": "neovim binary for veonim",
-  "main": "launcher.js",
-  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/veonim/neovim.git"
@@ -14,7 +12,9 @@
     "url": "https://github.com/veonim/neovim/issues"
   },
   "homepage": "https://github.com/veonim/neovim#readme",
-  "os": [
-    "win32"
-  ]
+  "optionalDependencies": {
+    "@veonim/neovim": "^0.0.5-win",
+    "@veonim/neovim": "^0.0.5-mac",
+    "@veonim/neovim": "^0.0.5-linux"
+  }
 }
