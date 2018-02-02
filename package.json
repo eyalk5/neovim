@@ -1,6 +1,6 @@
 {
   "name": "@veonim/neovim",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "main": "main.js",
   "types": "index.d.ts",
   "description": "neovim binary for veonim",
