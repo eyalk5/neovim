@@ -1,6 +1,6 @@
 {
   "name": "@veonim/neovim-win",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "neovim binary for veonim",
   "main": "launcher.js",
   "types": "index.d.ts",
