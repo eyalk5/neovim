@@ -35,3 +35,11 @@ make changes
 bump version in mac + linux + win `package.json`
 `npm publish` main `package.json` (if modified)
 `npm publish` each os package
+
+## upgrade neovim
+
+do the git workflow and build neovim
+
+copy the files
+- `${neovim-src}/build/bin/nvim ./${os}/bin/nvim`
+- `${neovim-src}/runtime ./${os}/share/runtime`
