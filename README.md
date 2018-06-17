@@ -43,3 +43,4 @@ do the git workflow and build neovim
 copy the files
 - `${neovim-src}/build/bin/nvim ./${os}/bin/nvim`
 - `${neovim-src}/runtime ./${os}/share/runtime`
+- `${neovim-src}/build/runtime/syntax/vim ./${os}/share/runtime/syntax/vim`
