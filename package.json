@@ -1,6 +1,6 @@
 {
   "name": "@veonim/neovim",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "main": "main.js",
   "types": "index.d.ts",
   "description": "neovim binary for veonim",
@@ -21,7 +21,7 @@
   "homepage": "https://github.com/veonim/neovim#readme",
   "optionalDependencies": {
     "@veonim/neovim-win": "0.0.3",
-    "@veonim/neovim-mac": "0.0.12",
+    "@veonim/neovim-mac": "0.0.13",
     "@veonim/neovim-linux": "0.0.4"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@veonim/neovim-mac",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "neovim binary for veonim",
   "main": "launcher.js",
   "types": "index.d.ts",
