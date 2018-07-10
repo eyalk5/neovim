@@ -48,6 +48,5 @@ copy the files
 ## build neovim
 ```
 rm -r build
-make clean
-make CMAKE_BUILD_TYPE=Release
+make clean && make CMAKE_BUILD_TYPE=Release
 ```
