@@ -44,3 +44,10 @@ copy the files
 - `${neovim-src}/build/bin/nvim ./${os}/bin/nvim`
 - `${neovim-src}/runtime ./${os}/share/runtime`
 - `${neovim-src}/build/runtime/syntax/vim ./${os}/share/runtime/syntax/vim`
+
+## build neovim
+```
+rm -r build
+make clean
+make CMAKE_BUILD_TYPE=Release
+```
