@@ -31,10 +31,9 @@ in development it would be a good idea to install `@veonim/neovim-dev`. this wil
 
 ## upgrade process
 
-make changes
-bump version in mac + linux + win `package.json`
-`npm publish` main `package.json` (if modified)
-`npm publish` each os package
+- make changes
+- bump version in mac + linux + win `package.json`
+- `npm publish` each os package
 
 ## upgrade neovim
 
@@ -44,6 +43,9 @@ copy the files
 - `${neovim-src}/build/bin/nvim ./${os}/bin/nvim`
 - `${neovim-src}/runtime ./${os}/share/runtime`
 - `${neovim-src}/build/runtime/syntax/vim ./${os}/share/runtime/syntax/vim`
+
+missing tags... why?
+- `share/runtime/doc/tags` (need this file to use `:h`)
 
 ## build neovim
 ```
