@@ -11,8 +11,8 @@ const main = async () => {
   const nrun = cmd => run(cmd, { cwd: neovimDir })
   const dest = p => path.join(process.cwd(), os, p)
 
-  // await nrun('rm -rf build')
-  // await nrun('make clean && make CMAKE_BUILD_TYPE=Release')
+  await nrun('rm -rf build')
+  await nrun('make clean && make CMAKE_BUILD_TYPE=Release')
 
   await nrun(`mkdir -p ${dest('bin')}`)
   await nrun(`mkdir -p ${dest('share/runtime')}`)
