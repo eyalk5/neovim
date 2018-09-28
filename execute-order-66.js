@@ -11,12 +11,16 @@ const main = async () => {
   const nrun = cmd => run(cmd, { cwd: neovimDir })
   const dest = p => path.join(process.cwd(), os, p)
 
-  await nrun('rm -rf build')
-  await nrun('make clean && make CMAKE_BUILD_TYPE=Release')
+  // await nrun('rm -rf build')
+  // await nrun('make clean && make CMAKE_BUILD_TYPE=Release')
+
+  await nrun(`mkdir -p ${dest('bin')}`)
+  await nrun(`mkdir -p ${dest('share/runtime')}`)
+
   await nrun(`cp -r build/bin/nvim ${dest('bin/nvim')}`)
-  await nrun(`cp -r runtime ${dest('share/runtime')}`)
-  await nrun(`cp -r build/runtime/doc ${dest('share/runtime/doc')}`)
-  await nrun(`cp -r build/runtime/syntax/vim ${dest('share/runtime/syntax/vim')}`)
+  await nrun(`cp -r runtime ${dest('share')}`)
+  await nrun(`cp -r build/runtime/doc ${dest('share/runtime')}`)
+  await nrun(`cp -r build/runtime/syntax/vim ${dest('share/runtime/syntax')}`)
 }
 
 const os = ({

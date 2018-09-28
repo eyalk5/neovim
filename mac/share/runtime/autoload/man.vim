@@ -1,5 +1,10 @@
 " Maintainer: Anmol Sethi <anmol@aubble.com>
 
+if exists('s:loaded_man')
+  finish
+endif
+let s:loaded_man = 1
+
 let s:find_arg = '-w'
 let s:localfile_arg = v:true  " Always use -l if possible. #6683
 let s:section_arg = '-s'
@@ -144,8 +149,9 @@ function! s:system(cmd, ...) abort
 endfunction
 
 function! s:get_page(path) abort
-  " Respect $MANWIDTH or default to window width.
-  let manwidth = empty($MANWIDTH) ? winwidth(0) : $MANWIDTH
+  " Disable hard-wrap by setting $MANWIDTH to a high value.
+  " Use soft wrap instead (ftplugin/man.vim sets 'wrap', 'breakindent').
+  let manwidth = 9999
   " Force MANPAGER=cat to ensure Vim is not recursively invoked (by man-db).
   " http://comments.gmane.org/gmane.editors.vim.devel/29085
   " Set MAN_KEEP_FORMATTING so Debian man doesn't discard backspaces.
@@ -161,6 +167,11 @@ function! s:put_page(page) abort
   while getline(1) =~# '^\s*$'
     silent keepjumps 1delete _
   endwhile
+  " XXX: nroff justifies text by filling it with whitespace.  That interacts
+  " badly with our use of $MANWIDTH=9999.  Hack around this by using a fixed
+  " size for those whitespace regions.
+  silent! keeppatterns keepjumps %s/\s\{999,}/\=repeat(' ', 10)/g
+  1
   lua require("man").highlight_man_page()
   setlocal filetype=man
 endfunction
@@ -212,9 +223,9 @@ function! man#extract_sect_and_name_ref(ref) abort
 endfunction
 
 function! s:get_path(sect, name) abort
+  " Some man implementations (OpenBSD) return all available paths from the
+  " search command, so we get() the first one. #8341
   if empty(a:sect)
-    " Some man implementations (OpenBSD) return all available paths from the
-    " search command, so we get() the first one. #8341
     return substitute(get(split(s:system(['man', s:find_arg, a:name])), 0, ''), '\n\+$', '', '')
   endif
   " '-s' flag handles:
@@ -222,7 +233,7 @@ function! s:get_path(sect, name) abort
   "   - sections starting with '-'
   "   - 3pcap section (found on macOS)
   "   - commas between sections (for section priority)
-  return substitute(s:system(['man', s:find_arg, s:section_arg, a:sect, a:name]), '\n\+$', '', '')
+  return substitute(get(split(s:system(['man', s:find_arg, s:section_arg, a:sect, a:name])), 0, ''), '\n\+$', '', '')
 endfunction
 
 function! s:verify_exists(sect, name) abort

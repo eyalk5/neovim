@@ -49,11 +49,13 @@ a complete and centralized reference of those differences.
 - 'nrformats' defaults to "bin,hex"
 - 'ruler' is set by default
 - 'sessionoptions' doesn't include "options"
+- 'shortmess' sets "F" flag
 - 'showcmd' is set by default
 - 'sidescroll' defaults to 1
 - 'smarttab' is set by default
 - 'tabpagemax' defaults to 50
 - 'tags' defaults to "./tags;,tags"
+- 'ttimeoutlen' defaults to 50
 - 'ttyfast' is always set
 - 'undodir' defaults to ~/.local/share/nvim/undo (|xdg|), auto-created
 - 'viminfo' includes "!"
@@ -110,7 +112,7 @@ ARCHITECTURE ~
 
 External plugins run in separate processes. |remote-plugin| This improves
 stability and allows those plugins to work without blocking the editor. Even
-"legacy" Python and Ruby plugins which use the old Vim interfaces (|if_py| and
+"legacy" Python and Ruby plugins which use the old Vim interfaces (|if_pyth|,
 |if_ruby|) run out-of-process.
 
 Platform and I/O facilities are built upon libuv. Nvim benefits from libuv
@@ -181,7 +183,7 @@ Options:
   'display' flag `msgsep` to minimize scrolling when showing messages
   'guicursor' works in the terminal
   'fillchars' flags: `msgsep` (see 'display' above)
-	      and `eob` for |EndOfBuffer| marker
+	      and `eob` for |hl-EndOfBuffer| marker
   'inccommand' shows interactive results for |:substitute|-like commands
   'scrollback'
   'statusline' supports unlimited alignment sections
@@ -244,7 +246,7 @@ makes things faster. |:terminal| output is never throttled.
 4. Stringifyed infinite and NaN values now use |str2float()| and can be evaled
    back.
 5. (internal) Trying to print or stringify VAR_UNKNOWN in Vim results in 
-   nothing, |E908|, in Neovim it is internal error.
+   nothing, E908, in Nvim it is internal error.
 
 |json_decode()| behaviour changed:
 1. It may output |msgpack-special-dict|.
@@ -286,12 +288,11 @@ coerced to strings. See |id()| for more details, currently it uses
 
 Lua interface (|if_lua.txt|):
 
-- `:lua print("a\0b")` will print `a^@b`, like with `:echomsg "a\nb"` . In Vim 
+- `:lua print("a\0b")` will print `a^@b`, like with `:echomsg "a\nb"` . In Vim
   that prints `a` and `b` on separate lines, exactly like
   `:lua print("a\nb")` .
-- `:lua error('TEST')` will print “TEST” as the error in Vim and “E5105: Error 
-  while calling lua chunk: [string "<VimL compiled string>"]:1: TEST” in 
-  Neovim.
+- `:lua error('TEST')` emits the error “E5105: Error while calling lua chunk:
+  [string "<VimL compiled string>"]:1: TEST”, whereas Vim emits only “TEST”.
 - Lua has direct access to Nvim |API| via `vim.api`.
 - Lua package.path and package.cpath are automatically updated according to
   'runtimepath': |lua-require|.
@@ -305,6 +306,7 @@ other arguments if used).
 Highlight groups:
   |hl-ColorColumn|, |hl-CursorColumn| are lower priority than most other
   groups
+  |hl-CursorLine| is low-priority unless foreground color is set
 
 Macro/|recording| behavior
   Replay of a macro recorded during :lmap produces the same actions as when it
@@ -315,10 +317,15 @@ Macro/|recording| behavior
   macros and 'keymap' at the same time. This also means you can use |:imap| on
   the results of keys from 'keymap'.
 
+Normal commands:
+  |Q| is the same as |gQ|
+
 Options:
   'ttimeout', 'ttimeoutlen' behavior was simplified
 
 Startup:
+  |-e| and |-es| invoke the same "improved Ex mode" as -E and -Es.
+  |-E| and |-Es| reads stdin as text (into buffer 1).
   |-s| reads Normal commands from stdin if the script name is "-".
   Reading text (instead of commands) from stdin |--|:
     - works by default: "-" file is optional
@@ -340,11 +347,14 @@ TUI:
   only 8 colours plus bright foreground on Linux VTs.
 
   Vim combines what is in its |builtin-terms| with what it reads from terminfo,
-  and has a |ttybuiltin| setting to control how that combination works.  Nvim
+  and has a 'ttybuiltin' setting to control how that combination works.  Nvim
   uses one or the other, it does not attempt to merge the two.
 
 VimL (Vim script) compatibility:
   `count` does not alias to |v:count|
+  `errmsg` does not alias to |v:errmsg|
+  `shell_error` does not alias to |v:shell_error|
+  `this_session` does not alias to |v:this_session|
 
 ==============================================================================
 5. Missing legacy features				 *nvim-features-missing*
@@ -465,4 +475,4 @@ TUI:
   always uses 7-bit control sequences.
 
 ==============================================================================
- vim:tw=78:ts=8:noet:ft=help:norl:
+ vim:tw=78:ts=8:sw=2:noet:ft=help:norl:
