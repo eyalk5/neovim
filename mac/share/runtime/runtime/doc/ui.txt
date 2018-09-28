@@ -175,8 +175,7 @@ Most of these events take a `grid` index as first parameter.  Grid 1 is the
 global grid used by default for the entire editor screen state. Grids other
 than that will be defined by future extensions. Just activating the `ext_newgrid`
 option by itself will never cause any additional grids to be created. To
-enable per-window grids, `ext_multigrid` option must be set (see
-|ui-multigrid|).
+enable per-window grids, set the `ext_multigrid` option (see |ui-multigrid|).
 
 Highlight attribute groups are predefined. UIs should maintain a table to map
 numerical highlight `id`:s to the actual attributes.
@@ -435,17 +434,19 @@ Multigrid Events 	  					 *ui-multigrid*
 Only sent if `ext_multigrid` option is set in |ui-options|. Enables the
 `ext_newgrid` implicitly.
 
-The multigrid enables the UIs to manipulate window grids individually. The UIs
-receive a grid update for each new window. The UIs can set a grid size
-independent of how a window is positioned in the UI. This enables the UIs to
-set a different font size for each window if the UI so desires. The UIs can
-also utilize this feature to reserve space for scrollbars consitent with their
-UI toolkit.
+The multigrid enables the clients to manipulate window grids individually. They
+receive updates on a separate grid for each new window. The client can set a
+grid size independent of how a window is positioned in the UI. This enables the
+clients to set a different font size for each window if they so desire. The
+clients can also utilize this feature to reserve space for scrollbars consitent
+with their UI toolkit.
 
 By default, the grid size is handled by nvim and set to the outer grid size
 (i.e. the size of the window frame in nvim) whenever the split is created.
 Once a UI sets a grid size, nvim does not handle the size for that grid and
-the UI must change the grid size whenever a new split is created.
+the UI must change the grid size whenever a new split is created. To delegate
+the handling of grid size back to nvim, the UIs can request the size to be set
+to (0, 0).
 
 ["win_position", win, grid, start_row, start_col, width, height]
 	Set the position and size of the grid in nvim (i.e. the outer grid
