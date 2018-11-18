@@ -7926,6 +7926,7 @@ ui-global	ui.txt	/*ui-global*
 ui-grid-old	ui.txt	/*ui-grid-old*
 ui-hlstate	ui.txt	/*ui-hlstate*
 ui-linegrid	ui.txt	/*ui-linegrid*
+ui-multigrid	ui.txt	/*ui-multigrid*
 ui-options	ui.txt	/*ui-options*
 ui-popupmenu	ui.txt	/*ui-popupmenu*
 ui-rgb	ui.txt	/*ui-rgb*
