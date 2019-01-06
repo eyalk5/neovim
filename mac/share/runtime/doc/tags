@@ -711,6 +711,8 @@ $XDG_DATA_HOME	starting.txt	/*$XDG_DATA_HOME*
 'pumheight'	options.txt	/*'pumheight'*
 'pvh'	options.txt	/*'pvh'*
 'pvw'	options.txt	/*'pvw'*
+'pyx'	options.txt	/*'pyx'*
+'pyxversion'	options.txt	/*'pyxversion'*
 'qe'	options.txt	/*'qe'*
 'quote	motion.txt	/*'quote*
 'quoteescape'	options.txt	/*'quoteescape'*
@@ -2397,6 +2399,10 @@ $XDG_DATA_HOME	starting.txt	/*$XDG_DATA_HOME*
 :pyfile	if_pyth.txt	/*:pyfile*
 :python	if_pyth.txt	/*:python*
 :python3	if_pyth.txt	/*:python3*
+:pythonx	if_pyth.txt	/*:pythonx*
+:pyx	if_pyth.txt	/*:pyx*
+:pyxdo	if_pyth.txt	/*:pyxdo*
+:pyxfile	if_pyth.txt	/*:pyxfile*
 :q	editing.txt	/*:q*
 :qa	editing.txt	/*:qa*
 :qall	editing.txt	/*:qall*
@@ -2506,6 +2512,7 @@ $XDG_DATA_HOME	starting.txt	/*$XDG_DATA_HOME*
 :scl	change.txt	/*:scl*
 :scp	change.txt	/*:scp*
 :scr	repeat.txt	/*:scr*
+:script	repeat.txt	/*:script*
 :scripte	repeat.txt	/*:scripte*
 :scriptencoding	repeat.txt	/*:scriptencoding*
 :scriptnames	repeat.txt	/*:scriptnames*
@@ -3216,6 +3223,7 @@ Dict	eval.txt	/*Dict*
 Dictionaries	eval.txt	/*Dictionaries*
 Dictionary	eval.txt	/*Dictionary*
 Dictionary-function	eval.txt	/*Dictionary-function*
+DiffUpdated	autocmd.txt	/*DiffUpdated*
 Digraphs	digraph.txt	/*Digraphs*
 DirChanged	autocmd.txt	/*DirChanged*
 E	motion.txt	/*E*
@@ -3437,7 +3445,7 @@ E315	message.txt	/*E315*
 E316	message.txt	/*E316*
 E317	message.txt	/*E317*
 E318	message.txt	/*E318*
-E319	message.txt	/*E319*
+E319	provider.txt	/*E319*
 E32	message.txt	/*E32*
 E320	message.txt	/*E320*
 E321	editing.txt	/*E321*
@@ -4036,6 +4044,7 @@ E951	pattern.txt	/*E951*
 E952	autocmd.txt	/*E952*
 E956	pattern.txt	/*E956*
 E96	diff.txt	/*E96*
+E960	options.txt	/*E960*
 E97	diff.txt	/*E97*
 E98	diff.txt	/*E98*
 E99	diff.txt	/*E99*
@@ -4272,6 +4281,8 @@ W16	message.txt	/*W16*
 W17	arabic.txt	/*W17*
 W18	syntax.txt	/*W18*
 W19	autocmd.txt	/*W19*
+W20	if_pyth.txt	/*W20*
+W21	if_pyth.txt	/*W21*
 W22	eval.txt	/*W22*
 WORD	motion.txt	/*WORD*
 WWW	intro.txt	/*WWW*
@@ -4447,6 +4458,7 @@ api-buffer-updates	api.txt	/*api-buffer-updates*
 api-client	msgpack_rpc.txt	/*api-client*
 api-contract	api.txt	/*api-contract*
 api-global	api.txt	/*api-global*
+api-global-events	api.txt	/*api-global-events*
 api-highlights	api.txt	/*api-highlights*
 api-metadata	api.txt	/*api-metadata*
 api-tabpage	api.txt	/*api-tabpage*
@@ -4877,6 +4889,7 @@ complex-change	change.txt	/*complex-change*
 complex-repeat	repeat.txt	/*complex-repeat*
 compress	pi_gzip.txt	/*compress*
 conceal	syntax.txt	/*conceal*
+config	starting.txt	/*config*
 confirm()	eval.txt	/*confirm()*
 console-menus	gui.txt	/*console-menus*
 control	intro.txt	/*control*
@@ -5041,7 +5054,6 @@ dev	develop.txt	/*dev*
 dev-api	develop.txt	/*dev-api*
 dev-api-client	develop.txt	/*dev-api-client*
 dev-doc	develop.txt	/*dev-doc*
-dev-jargon	develop.txt	/*dev-jargon*
 dev-provider	develop.txt	/*dev-provider*
 dev-ui	develop.txt	/*dev-ui*
 develop-spell	spell.txt	/*develop-spell*
@@ -5922,6 +5934,7 @@ h	motion.txt	/*h*
 has()	eval.txt	/*has()*
 has-patch	eval.txt	/*has-patch*
 has-python	if_pyth.txt	/*has-python*
+has-pythonx	if_pyth.txt	/*has-pythonx*
 has_key()	eval.txt	/*has_key()*
 haskell.vim	syntax.txt	/*haskell.vim*
 haslocaldir()	eval.txt	/*haslocaldir()*
@@ -6284,7 +6297,7 @@ init.vim	starting.txt	/*init.vim*
 initialization	starting.txt	/*initialization*
 input()	eval.txt	/*input()*
 input()-highlight	eval.txt	/*input()-highlight*
-inputdialog()	eval.txt	/*inputdialog()*
+inputdialog()	deprecated.txt	/*inputdialog()*
 inputlist()	eval.txt	/*inputlist()*
 inputrestore()	eval.txt	/*inputrestore()*
 inputsave()	eval.txt	/*inputsave()*
@@ -6328,6 +6341,7 @@ iw	motion.txt	/*iw*
 i{	motion.txt	/*i{*
 i}	motion.txt	/*i}*
 j	motion.txt	/*j*
+jargon	intro.txt	/*jargon*
 java-cinoptions	indent.txt	/*java-cinoptions*
 java-indenting	indent.txt	/*java-indenting*
 java.vim	syntax.txt	/*java.vim*
@@ -6918,7 +6932,7 @@ nvim__stats()	api.txt	/*nvim__stats()*
 nvim_buf_add_highlight()	api.txt	/*nvim_buf_add_highlight()*
 nvim_buf_attach()	api.txt	/*nvim_buf_attach()*
 nvim_buf_changedtick_event	api.txt	/*nvim_buf_changedtick_event*
-nvim_buf_clear_highlight()	api.txt	/*nvim_buf_clear_highlight()*
+nvim_buf_clear_namespace()	api.txt	/*nvim_buf_clear_namespace()*
 nvim_buf_del_var()	api.txt	/*nvim_buf_del_var()*
 nvim_buf_detach()	api.txt	/*nvim_buf_detach()*
 nvim_buf_detach_event	api.txt	/*nvim_buf_detach_event*
@@ -6945,10 +6959,12 @@ nvim_call_dict_function()	api.txt	/*nvim_call_dict_function()*
 nvim_call_function()	api.txt	/*nvim_call_function()*
 nvim_command()	api.txt	/*nvim_command()*
 nvim_command_output()	api.txt	/*nvim_command_output()*
+nvim_create_namespace()	api.txt	/*nvim_create_namespace()*
 nvim_del_current_line()	api.txt	/*nvim_del_current_line()*
 nvim_del_var()	api.txt	/*nvim_del_var()*
 nvim_err_write()	api.txt	/*nvim_err_write()*
 nvim_err_writeln()	api.txt	/*nvim_err_writeln()*
+nvim_error_event	api.txt	/*nvim_error_event*
 nvim_eval()	api.txt	/*nvim_eval()*
 nvim_execute_lua()	api.txt	/*nvim_execute_lua()*
 nvim_feedkeys()	api.txt	/*nvim_feedkeys()*
@@ -6965,6 +6981,7 @@ nvim_get_hl_by_id()	api.txt	/*nvim_get_hl_by_id()*
 nvim_get_hl_by_name()	api.txt	/*nvim_get_hl_by_name()*
 nvim_get_keymap()	api.txt	/*nvim_get_keymap()*
 nvim_get_mode()	api.txt	/*nvim_get_mode()*
+nvim_get_namespaces()	api.txt	/*nvim_get_namespaces()*
 nvim_get_option()	api.txt	/*nvim_get_option()*
 nvim_get_proc()	api.txt	/*nvim_get_proc()*
 nvim_get_proc_children()	api.txt	/*nvim_get_proc_children()*
@@ -7013,6 +7030,7 @@ nvim_win_get_tabpage()	api.txt	/*nvim_win_get_tabpage()*
 nvim_win_get_var()	api.txt	/*nvim_win_get_var()*
 nvim_win_get_width()	api.txt	/*nvim_win_get_width()*
 nvim_win_is_valid()	api.txt	/*nvim_win_is_valid()*
+nvim_win_set_buf()	api.txt	/*nvim_win_set_buf()*
 nvim_win_set_cursor()	api.txt	/*nvim_win_set_cursor()*
 nvim_win_set_height()	api.txt	/*nvim_win_set_height()*
 nvim_win_set_option()	api.txt	/*nvim_win_set_option()*
@@ -7209,7 +7227,11 @@ python2	if_pyth.txt	/*python2*
 python2-directory	if_pyth.txt	/*python2-directory*
 python3	if_pyth.txt	/*python3*
 python3-directory	if_pyth.txt	/*python3-directory*
+python_x	if_pyth.txt	/*python_x*
+python_x-special-comments	if_pyth.txt	/*python_x-special-comments*
+pythonx	if_pyth.txt	/*pythonx*
 pythonx-directory	if_pyth.txt	/*pythonx-directory*
+pyxeval()	eval.txt	/*pyxeval()*
 q	repeat.txt	/*q*
 q/	cmdline.txt	/*q\/*
 q:	cmdline.txt	/*q:*
@@ -7755,6 +7777,7 @@ syntax-loading	syntax.txt	/*syntax-loading*
 syntax-printing	usr_06.txt	/*syntax-printing*
 syntax.txt	syntax.txt	/*syntax.txt*
 syntax_cmd	syntax.txt	/*syntax_cmd*
+sysinit.vim	starting.txt	/*sysinit.vim*
 system()	eval.txt	/*system()*
 system-functions	usr_41.txt	/*system-functions*
 system-vimrc	starting.txt	/*system-vimrc*
@@ -7926,12 +7949,15 @@ ui-global	ui.txt	/*ui-global*
 ui-grid-old	ui.txt	/*ui-grid-old*
 ui-hlstate	ui.txt	/*ui-hlstate*
 ui-linegrid	ui.txt	/*ui-linegrid*
+ui-messages	ui.txt	/*ui-messages*
+ui-multigrid	ui.txt	/*ui-multigrid*
 ui-options	ui.txt	/*ui-options*
 ui-popupmenu	ui.txt	/*ui-popupmenu*
 ui-rgb	ui.txt	/*ui-rgb*
 ui-startup	ui.txt	/*ui-startup*
 ui-tabline	ui.txt	/*ui-tabline*
 ui-wildmenu	ui.txt	/*ui-wildmenu*
+ui-windows	ui.txt	/*ui-windows*
 ui.txt	ui.txt	/*ui.txt*
 undercurl	syntax.txt	/*undercurl*
 underline	syntax.txt	/*underline*
