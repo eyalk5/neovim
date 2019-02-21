@@ -136,8 +136,3 @@ cache:
     - "$HOME/.cache/pip"
     - "$HOME/.cache/nvim-deps"
     - "$HOME/.cache/nvim-deps-downloads"
-
-notifications:
-  webhooks:
-    urls:
-      - https://webhooks.gitter.im/e/b5c38c99f9677aa3d031
