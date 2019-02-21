@@ -20,5 +20,5 @@ jobs:
   pool:
     vmImage: 'vs2017-win2016'
   steps:
-  - script: echo wut
+  - script: Install-Product node 8
     displayName: 'install dependencies'
